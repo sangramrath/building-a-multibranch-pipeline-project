@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'node:6-alpine'
+            image 'node:8-alpine'
             args '-p 3000:3000 -p 5000:5000'
         }
     }
@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'npm install -g --unsafe-perm=true --allow-root'
+                sh 'npm install'
             }
         }
         stage('Test') {
