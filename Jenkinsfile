@@ -11,12 +11,12 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                sh 'chown -R 112:119 "/.npm'
                 sh 'npm install'
             }
         }
         stage('Test') {
             steps {
-                sh 'chown -R 112:119 "/.npm'
                 sh './jenkins/scripts/test.sh'
             }
         }
