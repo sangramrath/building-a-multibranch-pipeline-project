@@ -16,6 +16,7 @@ pipeline {
         }
         stage('Test') {
             steps {
+                sh 'chown -R 112:119 "/.npm'
                 sh './jenkins/scripts/test.sh'
             }
         }
