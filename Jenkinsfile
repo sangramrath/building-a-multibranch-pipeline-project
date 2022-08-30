@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'chown -R 112:119 "~/.npm"'
+                sh 'npm cache clean --force'
                 sh 'npm install'
             }
         }
